@@ -80,7 +80,7 @@ const About = () => {
   <div className="pl-6">
     {/* CHANGED: Used <a> tag instead of <button> */}
     <a 
-      href="public/X.pdf" 
+      href="/x.pdf" 
       download="My_Resume.pdf" // This creates the download action
       className="group inline-flex items-center gap-3 px-5 py-3 bg-neon-green/5 border border-neon-green/40 hover:bg-neon-green hover:text-black transition-all duration-300 cursor-pointer"
     >
@@ -105,7 +105,7 @@ const About = () => {
                  {/* Image inside */}
                  <div className="w-full h-full bg-neon-dark relative overflow-hidden">
                     <img 
-                      src="public/A.jpeg" 
+                      src="/a.jpeg" 
                       alt="Profile" 
                       className="w-full h-full object-cover grayscale contrast-125 opacity-80"
                     />

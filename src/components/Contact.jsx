@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser'; // <--- FIX 1: IMPORT ADDED
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -7,15 +8,41 @@ const Contact = () => {
     message: ''
   });
 
+  // <--- FIX 2: STATE ADDED
+  const [isSending, setIsSending] = useState(false); 
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Logic to handle form submission would go here
-    console.log('Transmission Initiated:', formData);
-    alert('TRANSMISSION_QUEUED');
+    setIsSending(true); // Now this works because we defined it above
+
+    // YOUR ACTUAL KEYS (Do not change these, they are correct)
+    const serviceID = 'service_y5g2jmk';
+    const templateID = 'template_flid7w8';
+    const publicKey = 'cGIX4TIrgtkEeLHBd';
+
+    // Create a temporary object to match EmailJS template variables
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+    };
+
+    emailjs.send(serviceID, templateID, templateParams, publicKey)
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('TRANSMISSION_SUCCESS: Message received by server.');
+        setFormData({ name: '', email: '', message: '' }); // Clear form
+        setIsSending(false);
+      })
+      .catch((err) => {
+        console.log('FAILED...', err);
+        alert('TRANSMISSION_ERROR: Connection failed. Check console.');
+        setIsSending(false);
+      });
   };
 
   return (
@@ -41,7 +68,7 @@ const Contact = () => {
           {/* 2. Main Content (Split View) */}
           <div className="grid md:grid-cols-2">
             
-            {/* LEFT SIDE: Secure Channels (Clickable Cards from Image 5) */}
+            {/* LEFT SIDE: Secure Channels */}
             <div className="p-8 border-b md:border-b-0 md:border-r border-neon-green/20 bg-neon-green/5">
               
               <h3 className="text-neon-cyan font-mono text-sm mb-6 flex items-center gap-2 tracking-wider">
@@ -50,15 +77,15 @@ const Contact = () => {
 
               <div className="space-y-4">
                 
-                {/* Email Card */}
-                <a href="mailto:alex@cyberportfolio.sec" className="group block p-4 border border-neon-green/20 bg-black/40 hover:bg-neon-green/10 hover:border-neon-green/60 transition-all duration-300">
+                {/* Email Card - UPDATED to your email */}
+                <a href="mailto:shetyesoham07@gmail.com" className="group block p-4 border border-neon-green/20 bg-black/40 hover:bg-neon-green/10 hover:border-neon-green/60 transition-all duration-300">
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 rounded-full bg-neon-green/10 flex items-center justify-center border border-neon-green/20 group-hover:border-neon-green">
                       <span className="text-neon-green text-lg">@</span>
                     </div>
                     <div>
                       <div className="text-xs text-neon-green/50 font-mono mb-1">EMAIL_RLY</div>
-                      <div className="text-neon-green font-mono text-sm group-hover:text-white transition-colors">alex@cyber.sec</div>
+                      <div className="text-neon-green font-mono text-sm group-hover:text-white transition-colors">shetyesoham07@gmail.com</div>
                     </div>
                   </div>
                 </a>
@@ -71,7 +98,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <div className="text-xs text-neon-green/50 font-mono mb-1">ZOOM_INFO</div>
-                      <div className="text-neon-green font-mono text-sm group-hover:text-white transition-colors">linkedin/alex</div>
+                      <div className="text-neon-green font-mono text-sm group-hover:text-white transition-colors">linkedin/soham</div>
                     </div>
                   </div>
                 </a>
@@ -84,7 +111,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <div className="text-xs text-neon-green/50 font-mono mb-1">REPO_HUB</div>
-                      <div className="text-neon-green font-mono text-sm group-hover:text-white transition-colors">github/alex</div>
+                      <div className="text-neon-green font-mono text-sm group-hover:text-white transition-colors">github/soham</div>
                     </div>
                   </div>
                 </a>
@@ -99,7 +126,7 @@ const Contact = () => {
 
             </div>
 
-            {/* RIGHT SIDE: Transmission Form (Functional Layout from Image 4) */}
+            {/* RIGHT SIDE: Transmission Form */}
             <div className="p-8 bg-black">
               
               <h3 className="text-neon-cyan font-mono text-sm mb-6 flex items-center gap-2 tracking-wider">
@@ -156,13 +183,14 @@ const Contact = () => {
                   ></textarea>
                 </div>
 
-                {/* Submit Button */}
+                {/* Submit Button - UPDATED to handle loading state */}
                 <button 
                   type="submit"
-                  className="w-full mt-4 py-3 border border-neon-green text-neon-green font-mono font-bold tracking-wider hover:bg-neon-green hover:text-black transition-all duration-300 uppercase flex items-center justify-center gap-2 group"
+                  disabled={isSending}
+                  className="w-full mt-4 py-3 border border-neon-green text-neon-green font-mono font-bold tracking-wider hover:bg-neon-green hover:text-black transition-all duration-300 uppercase flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-wait"
                 >
                   <span className="animate-pulse group-hover:animate-none">[</span> 
-                  SEND_TRANSMISSION 
+                  {isSending ? 'TRANSMITTING...' : 'SEND_TRANSMISSION'} 
                   <span className="animate-pulse group-hover:animate-none">]</span>
                 </button>
 
