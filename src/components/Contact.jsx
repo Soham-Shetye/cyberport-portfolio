@@ -107,7 +107,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <div className="text-xs text-neon-green/50 font-mono mb-1">ZOOM_INFO</div>
-                      <div className="text-neon-green font-mono text-sm group-hover:text-white transition-colors">linkedin/alex</div>
+                      <div className="text-neon-green font-mono text-sm group-hover:text-white transition-colors">linkedin/soham</div>
                     </div>
                   </div>
                 </a>
@@ -118,7 +118,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <div className="text-xs text-neon-green/50 font-mono mb-1">REPO_HUB</div>
-                      <div className="text-neon-green font-mono text-sm group-hover:text-white transition-colors">github/alex</div>
+                      <div className="text-neon-green font-mono text-sm group-hover:text-white transition-colors">github/soham</div>
                     </div>
                   </div>
                 </a>

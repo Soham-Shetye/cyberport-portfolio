@@ -47,7 +47,7 @@ export const projectsData = [
     title: 'WORK_IN_PROGRESS',
     description: 'Project modules are currently being compiled. Detailed case studies will be uploaded after internship allocation.',
     techStack: ['System', 'Loading...'],
-    imageUrl: 'https://picsum.photos/seed/tech/800/600?grayscale', // Generic tech image
+    imageUrl: '/s.jpg', // Generic tech image
     githubUrl: '#',
     liveUrl: '#',
   }
