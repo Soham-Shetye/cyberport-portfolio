@@ -2,23 +2,23 @@ import React from 'react';
 
 // Skill Data Configuration
 const skills = {
-  "LANGUAGES": [
-    { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-    { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-    { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+  "CORE LANGUAGES": [
+    { name: "C", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
     { name: "C++", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
+    { name: "Java (Core)", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+    { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
   ],
-  "FRAMEWORKS": [
-    { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-    { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
-    { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-    { name: "Flask", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" },
+  "WEB & MOBILE": [
+    { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+    { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+    { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+    { name: "Dart", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" },
+    { name: "Flutter", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
   ],
-  "TOOLS & DB": [
-    { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-    { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-    { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-    { name: "Linux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
+  "DATABASE & SYSTEM": [
+    { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+    { name: "PL/SQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" },
+    { name: "Linux CMD", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
   ]
 };
 
@@ -40,19 +40,19 @@ const Skills = () => {
             <div className="font-mono text-neon-green/60 text-xs tracking-widest">
               USER@CYBERPORT:~/SKILLS
             </div>
-            <div className="w-10"></div> {/* Spacer for centering */}
+            <div className="w-10"></div>
           </div>
 
           {/* 2. Terminal Body */}
-          <div className="p-6 md:p-10 space-y-12">
+          <div className="p-6 md:p-10 space-y-10">
             
             {Object.entries(skills).map(([category, items]) => (
               <div key={category} className="relative">
                 
-                {/* Category Header */}
-                <h3 className="text-neon-cyan font-mono text-lg mb-6 flex items-center gap-3 border-b border-neon-green/10 pb-2">
-                  <span className="text-neon-pink font-bold">{'>'}</span> 
-                  <span className="tracking-wider">{category}</span>
+                {/* Category Header - FIXED SIZE AND STYLE */}
+                <h3 className="text-neon-cyan font-mono text-sm mb-6 flex items-center gap-2 tracking-wider border-b border-neon-green/10 pb-2">
+                  <span className="text-neon-pink font-bold">./</span> 
+                  {category}
                 </h3>
                 
                 {/* Skills Grid */}
@@ -65,17 +65,17 @@ const Skills = () => {
                       {/* Hover Scanline Effect */}
                       <div className="absolute inset-0 bg-gradient-to-t from-neon-green/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
-                      {/* Icon with Filter Logic */}
+                      {/* Icon */}
                       <div className="relative z-10 p-2 bg-black/50 rounded-full border border-neon-green/10 group-hover:border-neon-green/50 transition-colors">
                         <img 
                           src={skill.icon} 
                           alt={skill.name} 
-                          className="w-10 h-10 transition-all duration-500 filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110"
+                          className="w-8 h-8 md:w-10 md:h-10 transition-all duration-500 filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110"
                         />
                       </div>
                       
                       {/* Name */}
-                      <span className="relative z-10 text-neon-green/80 font-mono text-xs tracking-wider group-hover:text-white transition-colors">
+                      <span className="relative z-10 text-neon-green/80 font-mono text-xs tracking-wider group-hover:text-white transition-colors text-center">
                         {skill.name}
                       </span>
                       
@@ -93,8 +93,8 @@ const Skills = () => {
           
           {/* Bottom Status Bar */}
           <div className="bg-neon-green/5 border-t border-neon-green/20 p-2 px-4 flex justify-between items-center text-[10px] text-neon-green/40 font-mono">
-            <span>PACKAGES: {Object.values(skills).flat().length} INSTALLED</span>
-            <span className="animate-pulse">SYSTEM_HK: OK</span>
+            <span>INSTALLED_PACKAGES: {Object.values(skills).flat().length}</span>
+            <span className="animate-pulse">DEPENDENCIES: OK</span>
           </div>
 
         </div>
