@@ -95,40 +95,44 @@ const About = () => {
             </div>
 
             {/* RIGHT COLUMN: The Visual Structure */}
-            <div className="relative flex justify-center items-center">
-              
-              {/* Decorative brackets */}
-              <div className="absolute inset-0 border-x border-neon-green/20 scale-y-110"></div>
-              
-              {/* The Image Box */}
-              <div className="relative w-48 h-48 md:w-56 md:h-56 border-2 border-dashed border-neon-green/40 p-2">
-                 {/* Image inside */}
-                 <div className="w-full h-full bg-neon-dark relative overflow-hidden">
-                    <img 
-                      src="/a.jpeg" 
-                      alt="Profile" 
-                      className="w-full h-full object-cover grayscale contrast-125 opacity-80"
-                    />
-                    {/* Scanline overlay on image only */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-neon-green/20 bg-[length:100%_4px]"></div>
-                 </div>
+            {/* RIGHT SIDE: Profile Image */}
+<div className="flex flex-col items-center justify-start pt-10 md:pt-0">
+  
+  {/* The Container */}
+  <div className="relative w-64 md:w-72 aspect-[3/4] border-2 border-dashed border-neon-green/30 p-2 rounded bg-black/50">
+    
+    {/* Corner Decors */}
+    <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-neon-green"></div>
+    <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-neon-green"></div>
 
-                 {/* Tech Stats below image */}
-                 <div className="absolute -bottom-10 left-0 w-full text-center space-y-1">
-                    <div className="text-[10px] text-neon-green/60">STATUS: ONLINE</div>
-                    <div className="h-1 w-full bg-neon-dark border border-neon-green/30">
-                       <div className="h-full w-full bg-neon-green animate-pulse"></div>
-                    </div>
-                 </div>
-              </div>
+    {/* The Image */}
+    <div className="w-full h-full relative overflow-hidden bg-neon-green/10">
+      <div className="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,255,65,0.1)_50%)] bg-[length:100%_4px] pointer-events-none z-20"></div>
+      <img 
+        src="/S.jpeg"  
+        alt="Profile" 
+        className="w-full h-full object-cover object-top filter grayscale hover:grayscale-0 transition-all duration-500"
+      />
+    </div>
+  </div>
 
-            </div>
+  {/* Status Label - FIXED: Added mt-6 to create a proper gap */}
+  <div className="mt-6">
+    <div className="inline-block px-3 py-1 border border-neon-green/30 bg-neon-green/5 rounded-full">
+      <div className="flex items-center gap-2">
+        <span className="w-2 h-2 rounded-full bg-neon-green animate-pulse"></span>
+        <span className="text-[10px] font-mono text-neon-green tracking-widest">STATUS: ONLINE</span>
+      </div>
+    </div>
+  </div>
 
+</div>
+            {/* (STOP REPLACING HERE) */}
           </div>
         </div>
 
       </div>
-    </section>
+    </section> 
   );
 };
 
