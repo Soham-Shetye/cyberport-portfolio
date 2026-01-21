@@ -100,7 +100,7 @@ const Contact = () => {
                     </div>
                   </div>
                 </a>
-                <a href="https://www.linkedin.com/in/soham-shetye-imrich07/" target="_blank" className="group block p-4 border border-neon-green/20 bg-black/40 hover:bg-neon-green/10 hover:border-neon-green/60 transition-all duration-300">
+                <a href="https://www.linkedin.com/in/shetye-soham/" target="_blank" className="group block p-4 border border-neon-green/20 bg-black/40 hover:bg-neon-green/10 hover:border-neon-green/60 transition-all duration-300">
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 rounded-full bg-neon-green/10 flex items-center justify-center border border-neon-green/20 group-hover:border-neon-green">
                       <span className="text-neon-green text-lg">in</span>
