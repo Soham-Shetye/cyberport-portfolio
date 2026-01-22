@@ -94,10 +94,10 @@ const Hero = ({ onEnter }) => {
         
         <div className="flex flex-col items-center gap-2 mt-2">
           <p className="text-neon-cyan font-mono text-lg md:text-xl">
-            {'>'} Full Stack Engineer & Creative Coder
+            {'>'} Python Developer & Cybersecurity Enthusiast
           </p>
           <p className="text-neon-green/60 font-mono text-sm">
-            [ REACT / TYPESCRIPT / SECURITY / WEBGL ]
+            [ PYTHON / AI / CYBERSECURITY / LINUX ]
           </p>
         </div>
 
