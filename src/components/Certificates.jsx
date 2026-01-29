@@ -5,11 +5,11 @@ const Certificates = () => {
   const certificates = [
     {
       id: 1,
-      title: 'LINUX_ESSENTIALS',
-      issuer: 'Cisco Networking Academy',
-      date: 'NOV_2023',
-      id_code: 'CISCO-LE-8842',
-      link: '#' 
+      title: 'CYBER-SECURITY',
+      issuer: 'IIT Bombay',
+      date: 'DEC_2025',
+      id_code: '9e31ba62',
+      link: 'Soham.pdf' 
     },
     {
       id: 2,
