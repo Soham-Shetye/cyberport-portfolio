@@ -47,7 +47,7 @@ const About = () => {
                   <span>cat mission.txt</span>
                 </div>
                 <p className="text-neon-green pl-6 leading-relaxed opacity-90">
-                  Specializing in Python, Linux (Debian 12), and secure web architecture. Currently seeking internship opportunities to deploy my skills in a live environment.
+                  Specializing in Python, Linux (Debian 13), and secure web architecture. Currently seeking internship opportunities to deploy my skills in a live environment.
                 </p>
               </div>
 

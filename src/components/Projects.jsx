@@ -9,8 +9,8 @@ const Projects = () => {
       status: "IN_DEVELOPMENT", // Added status flag
       description: "A high-performance digital ecosystem supporting the mangrove legacy of India. Designed to reach a national audience with eco-tourism and ecological consciousness.",
       tech: ["HTML5", "CSS3", "JAVASCRIPT"],
-      link: "https://pankhol-juva.netlify.app/", 
-      repo: "https://github.com/Soham-Shetye/Mangroves Conservation"
+      link: "https://pankholjuva.com/", 
+      repo: "https://github.com/Soham-Shetye/Mangroves-Conservation"
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const Projects = () => {
       description: "A Python-based Command Line Interface tool designed for basic query handling and system interaction tasks.",
       tech: ["PYTHON", "OS_MODULE", "CLI"],
       link: null, 
-      repo: "https://github.com/Soham-Shetye" 
+      repo: "https://github.com/Soham-Shetye/Financial-Chatbot-CLI" 
     },
     /*{
       id: 3,

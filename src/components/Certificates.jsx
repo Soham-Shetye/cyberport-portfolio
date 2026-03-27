@@ -13,20 +13,13 @@ const Certificates = () => {
     },
     {
       id: 2,
-      title: 'ETHICAL_HACKING',
-      issuer: 'Udemy / Heath Adams',
-      date: 'JAN_2024',
-      id_code: 'UDEMY-EH-9921',
-      link: '#' 
-    },
-    {
-      id: 3,
-      title: 'PYTHON_BOOTCAMP',
+      title: 'FOUNDATION OF CYBER-SECURITY',
       issuer: 'Coursera / Google',
-      date: 'MAR_2024',
-      id_code: 'GOOG-PY-1102',
-      link: '#'
-    }
+      date: 'DEC_2025',
+      /*id_code: 'UDEMY-EH-9921',*/
+      link: 'cs.pdf' 
+    },
+    
   ];
 
   return (
