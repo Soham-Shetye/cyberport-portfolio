@@ -81,7 +81,7 @@ const About = () => {
                   {/* CHANGED: Used <a> tag instead of <button> */}
                   <a
                     href="/Soham_Shetye_Resume.pdf"
-                    download="My_Resume.pdf" // This creates the download action
+                    download="My_Resume.docx" // This creates the download action
                     className="group inline-flex items-center gap-3 px-5 py-3 bg-neon-green/5 border border-neon-green/40 hover:bg-neon-green hover:text-black transition-all duration-300 cursor-pointer"
                   >
                     <span className="font-bold">./DOWNLOAD_RESUME.SH</span>
