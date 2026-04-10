@@ -5,30 +5,45 @@ const Certificates = () => {
   const certificates = [
     {
       id: 1,
+      title: 'Futurepreneurs',
+      issuer: 'Anthropic',
+      date: 'AUG_2025',
+      link: 'Futurepreneurs'
+    },
+    {
+      id: 2,
       title: 'CYBER-SECURITY',
       issuer: 'IIT Bombay',
       date: 'DEC_2025',
       id_code: '9e31ba62',
-      link: 'Soham.pdf' 
+      link: 'Cyber-Security.pdf'
     },
     {
-      id: 2,
+      id: 3,
       title: 'FOUNDATION OF CYBER-SECURITY',
       issuer: 'Coursera / Google',
       date: 'DEC_2025',
-      /*id_code: 'UDEMY-EH-9921',*/
-      link: 'cs.pdf' 
+      id_code: 'MAXJHXYVA0P6',
+      link: 'IIT-Techfest.pdf'
     },
-    
+    {
+      id: 4,
+      title: 'CLAUDE 101',
+      issuer: 'Anthropic',
+      date: 'APR_2026',
+      link: 'Claude 101.pdf'
+    },
+
+
   ];
 
   return (
     <section id="certificates" className="py-20">
       <div className="max-w-5xl mx-auto px-4">
-        
+
         {/* --- TERMINAL CONTAINER START (Matches Contact & Projects) --- */}
         <div className="w-full bg-black border border-neon-green/50 rounded-lg overflow-hidden shadow-[0_0_30px_rgba(0,255,65,0.1)]">
-          
+
           {/* 1. Terminal Header Bar */}
           <div className="bg-neon-green/10 border-b border-neon-green/30 p-3 flex items-center justify-between select-none">
             <div className="flex gap-2">
@@ -44,28 +59,28 @@ const Certificates = () => {
 
           {/* 2. Main Content Area */}
           <div className="p-8 bg-black">
-            
+
             <h3 className="text-neon-cyan font-mono text-sm mb-6 flex items-center gap-2 tracking-wider">
               <span className="text-neon-pink">./</span> VERIFIED_CREDENTIALS
             </h3>
 
             {/* Grid Layout for Certificates */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              
+
               {certificates.map((cert) => (
-                <a 
-                  key={cert.id} 
+                <a
+                  key={cert.id}
                   href={cert.link}
-                  target="_blank" 
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="group block p-4 border border-neon-green/20 bg-neon-green/5 hover:bg-neon-green/10 hover:border-neon-green/60 transition-all duration-300 relative overflow-hidden"
                 >
-                  
+
                   {/* Decorative Corner */}
                   <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-neon-green/30 group-hover:border-neon-green transition-colors"></div>
 
                   <div className="flex flex-col h-full justify-between gap-4">
-                    
+
                     {/* Top: Icon + ID */}
                     <div className="flex justify-between items-start">
                       <div className="w-8 h-8 rounded bg-neon-green/10 flex items-center justify-center border border-neon-green/20 group-hover:border-neon-green text-lg">
