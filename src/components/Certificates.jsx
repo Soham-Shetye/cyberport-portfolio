@@ -6,9 +6,9 @@ const Certificates = () => {
     {
       id: 1,
       title: 'Futurepreneurs',
-      issuer: 'Anthropic',
+      issuer: 'Aakar Foundation',
       date: 'AUG_2025',
-      link: 'Futurepreneurs'
+      link: 'Futurepreneurs.jpeg'
     },
     {
       id: 2,
